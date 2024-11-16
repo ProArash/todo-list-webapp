@@ -17,7 +17,7 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 	return (
 		<Button
 			onClick={onClick}
-			className={`bg-primary flex p-2 items-center gap-2 justify-center rounded-md transition active:bg-onPrimary font-bold ${className}`}>
+			className={`bg-primary flex p-2 items-center gap-2 justify-center rounded-md transition active:bg-onPrimary ${className}`}>
 			{icon && icon}
 			{children && <span>{children}</span>}
 		</Button>

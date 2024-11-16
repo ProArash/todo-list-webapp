@@ -1,22 +1,21 @@
-import React from 'react';
-import TodoCard, { TodoCardProps } from '../TodoCard/TodoCard';
+import { getAllTodos } from '../../app/actions/todo/GetAll';
+import TodoCard from '../TodoCard/TodoCard';
 
-const MainBox = () => {
-	const todoList: TodoCardProps[] = Array(13).fill(0);
+const MainBox = async () => {
+	const todoList = await getAllTodos();
 	return (
 		<div className="flex flex-col gap-5 w-full p-5">
-			<div className="grid grid-cols-4 w-full justify-items-center gap-5">
-				{todoList.map((v, i) => (
-					<TodoCard
-						key={i}
-						caption="bad baddd"
-						title="bad title"
-						date="March 2024"
-						status={i % 3 == 0 ? false : true}
-						color={i % 2 == 0 ? 'red' : 'yellow'}
-						className={i % 3 == 0 ? 'bg-cyan-600' : 'bg-yellow-600'}
-					/>
-				))}
+			<div className="grid grid-cols-4 w-full gap-5">
+				{todoList &&
+					todoList.map((v) => (
+						<TodoCard
+							key={v.id}
+							caption={v.caption}
+							title={v.title}
+							date={v.date}
+							status={v.status}
+						/>
+					))}
 			</div>
 		</div>
 	);

@@ -1,17 +1,14 @@
 'use client';
 import React from 'react';
 import CustomButton from '../CustomButton/CustomButton';
-import { FaPencil } from 'react-icons/fa6';
-
-type cardColor = 'red' | 'yellow' | 'blue';
+import { FaCircleXmark, FaPencil } from 'react-icons/fa6';
+import { FaCheckCircle } from 'react-icons/fa';
 
 export interface TodoCardProps {
 	title: string;
 	caption: string;
-	className?: string;
 	status: boolean;
 	date: string;
-	color?: cardColor;
 }
 
 const TodoCard: React.FC<TodoCardProps> = ({
@@ -19,17 +16,20 @@ const TodoCard: React.FC<TodoCardProps> = ({
 	status,
 	title,
 	date,
-	className,
 }) => {
 	return (
 		<div
-			className={`flex flex-col gap-3 w-[250px] h-[250px] p-3 rounded-xl text-foreground ${className}`}>
-			<div className="flex justify-between items-center">
+			className={`flex flex-col gap-3 w-[350px] h-[350px] bg-secondary rounded-xl p-2 text-foreground border border-primary`}>
+			<div className="flex justify-between items-center rounded-md bg-primary p-2">
 				<p className="font-bold text-lg">{title}</p>
-				{status}
+				<p className="text-onPrimary">
+					{status ? <FaCheckCircle /> : <FaCircleXmark />}
+				</p>
 			</div>
-			<p className="text-justify grow">{caption}</p>
-			<div className="flex justify-between bottom-0">
+			<p className="text-justify grow bg-primary rounded-md p-1">
+				{caption}
+			</p>
+			<div className="flex justify-between items-center bg-primary rounded-md p-1">
 				<CustomButton icon={<FaPencil />} onClick={() => {}} />
 				{date}
 			</div>

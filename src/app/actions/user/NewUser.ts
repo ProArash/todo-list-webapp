@@ -1,8 +1,8 @@
 'use server';
 
 import { User } from '@prisma/client';
-import prisma from '../../utils/PrismaClient';
-import { UserDto } from '../../utils/dto/UserDto';
+import { UserDto } from '../../../utils/dto/UserDto';
+import prisma from '../../../utils/PrismaClient';
 
 export const createUser = async (userDto: UserDto): Promise<User> => {
 	const user = await prisma?.user.create({
