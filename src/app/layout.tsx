@@ -14,6 +14,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
+			<meta name='theme-color' content='' />
 			<body className={`antialiased`}>
 				<FixThemeProvider>{children}</FixThemeProvider>
 			</body>

@@ -11,7 +11,7 @@ const Sidebar = () => {
 		setDialog(true);
 	};
 	return (
-		<div className="flex flex-col gap-5 h-screen overflow-y-auto border border-secondary w-fit p-5 rounded-r-lg items-center">
+		<div className="flex flex-col gap-5 h-screen overflow-y-auto border border-secondary w-fit p-5 rounded-r-md items-center">
 			<p className="border-b border-b-secondary pb-2">Todo list</p>
 			<CustomButton
 				className="!rounded-full w-full"

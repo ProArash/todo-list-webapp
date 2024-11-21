@@ -12,9 +12,9 @@ const FixThemeProvider = ({ children }: { children: ReactNode }) => {
 	}
 	return (
 		<ThemeProvider
-			defaultTheme="dark"
+			defaultTheme="light"
 			themes={['dark', 'light']}
-			enableSystem={false}>
+			enableSystem={true}>
 			{children}
 		</ThemeProvider>
 	);

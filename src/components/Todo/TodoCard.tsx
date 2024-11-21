@@ -19,7 +19,7 @@ const TodoCard: React.FC<TodoCardProps> = ({
 }) => {
 	return (
 		<div
-			className={`flex flex-col gap-3 w-[250px] h-[250px] bg-secondary rounded-xl p-2 text-foreground border border-primary`}>
+			className={`flex flex-col gap-3 md:w-[250px] h-[250px] w-full bg-secondary rounded-xl p-2 text-foreground border border-primary`}>
 			<div className="flex justify-between items-center rounded-md bg-primary p-2">
 				<p className="font-bold text-lg">{title}</p>
 				<p className="text-onPrimary">

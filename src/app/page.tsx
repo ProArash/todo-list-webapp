@@ -3,8 +3,8 @@ import Sidebar from '../components/Sidebar/Sidebar';
 
 const Home = async () => {
 	return (
-		<div className="flex gap-5 w-full">
-			<div className="w-1/12">
+		<div className="flex gap-2 w-full">
+			<div className="md:w-1/12">
 				<Sidebar />
 			</div>
 			<div className="w-full">

@@ -4,8 +4,8 @@ import TodoCard from '../Todo/TodoCard';
 const MainBox = async () => {
 	const todoList = await getAllTodos();
 	return (
-		<div className="flex flex-col gap-5 w-full p-5 border border-onPrimary rounded-md">
-			<div className="grid grid-cols-4 w-full gap-5 overflow-y-auto h-screen">
+		<div className="flex flex-col gap-5 w-full rounded-md">
+			<div className="grid md:grid-cols-4 grid-cols-1 w-full gap-5 overflow-y-auto h-screen justify-items-center">
 				{todoList &&
 					todoList.map((v) => (
 						<TodoCard
